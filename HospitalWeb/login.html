@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style_login.css">
+  <link rel="shortcut icon" href="img/login.png" type="image/x-icon">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Inicio de sesion</title>
+</head>
+<body>
+  
+
+  <form action="/action_page.php">
+    <h2>INICIO DE SESIÓN</h2>
+    <div class="input-container">
+      <i class="fa fa-user icon"></i>
+      <input class="input-field" type="text" placeholder="Username" name="usrnm">
+    </div>
+  
+    <div class="input-container">
+      <i class="fa fa-envelope icon"></i>
+      <input class="input-field" type="text" placeholder="Email" name="email">
+    </div>
+  
+    <div class="input-container">
+      <i class="fa fa-key icon"></i>
+      <input class="input-field" type="password" placeholder="Password" name="psw" id="myInput">
+    </div>
+  
+    <!--<button type="submit" class="btn" onclick="move()" >Ingresar</button>-->
+    <input type="button" value="Ingresar" onclick="move()" style="width:100%; height:40px; background-color:#337ab7;color: white;">
+    
+    <input type="checkbox" onclick="myFunction()">Show Password
+  </form>
+
+  
+  <script>
+  function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+</script>
+
+
+  <br>
+  <div id="myProgress">
+    <div id="myBar"></div>
+  </div>
+  
+  <script>
+    var i = 0;
+    function move() {
+      if (i == 0) {
+        i = 1;
+        var elem = document.getElementById("myBar");
+        var width = 1;
+        var id = setInterval(frame, 10);
+        function frame() {
+          if (width >= 100) {
+            clearInterval(id);
+            i = 0;
+          } else {
+            width++;
+            elem.style.width = width + "%";
+          }
+        }
+      }
+    }
+    </script>
+
+  <br>
+  <a href="index.html" style="margin-top:10px; text-decoration:none;"> Inicio...</a>
+
+
+
+</body>
+</html>
